@@ -1,15 +1,18 @@
-import React from "react";
-import {NavLink} from "react-router-dom";
+import React, {useState, useContext} from "react";
+import AppContext from "./AppContext";
 
-const NavBar = () => (
-    <div>
-        <NavLink to="/" activeClassName="is-active" exact={true}>Home</NavLink>
-        <NavLink to="/about" activeClassName="is-active">about</NavLink>
-        <NavLink to="/projects" activeClassName="is-active">projects</NavLink>
-        <NavLink to="/contact" activeClassName="is-active">contact-me</NavLink>
-        <a href="https://srv-file20.gofile.io/download/vSnrbX/Alon%20Zrihen%20Resume.pdf" download>my-resume</a>
-    </div>
-)
+const NavBar = () => {
+
+    const PagePosition = useContext(AppContext);
+    return (
+        <div id="nav-bar" className={PagePosition >= 543 ? "nav-anim" : undefined}>
+            <a href="#home" className={PagePosition < 543 ? "active" : undefined}>Home</a>
+            <a href="#about" className={PagePosition > 543 && PagePosition < 1547 ? "active" : undefined}>About</a>
+            <a href="#projects" className={PagePosition > 1547 && PagePosition < 2200 ? "active" : undefined}>Projects</a>
+            <a href="#contact" className={PagePosition > 2200 ? "active" : undefined}>Contact</a>
+        </div>
+    )
+}
 
 
 export default NavBar;
