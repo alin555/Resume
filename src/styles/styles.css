@@ -41,7 +41,13 @@ color: inherit;
     width: 48%;
     justify-content: space-evenly;
     align-items: center;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
 
+#home-button i{
+    transition-property: transform;
+    transition-duration: 0.5s;
 }
 
 #home-button:hover {
@@ -51,6 +57,7 @@ color: inherit;
 }
 
 #home-button:hover i{
+
     animation: rotate 0.5s forwards;
 }
 
@@ -286,6 +293,22 @@ color: inherit;
 
 .example-proj:hover {
     animation: zoomFade 0.5s forwards;
+}
+
+.project-modal {
+    width: 1000px;
+    height: 500px;
+    position: relative;
+    transition: (50%,50%);
+}
+
+.ReactModal__Overlay--after-open {
+    z-index: 2;
+}
+
+#modal-img {
+    height: 50%;
+    width: 75%;
 }
 
 /* /////////////////// CONTACT ////////////////// */
